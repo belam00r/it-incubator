@@ -7,9 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        let arr = [3, 1, 2, 3, 4, 5]
-        arr = arr * 3;
-        console.log(arr)
+        function validateMessage(msg) {
+            if (typeof msg !== "string") {
+                throw new TypeError(`Message should be of type string but was of type ${typeof msg}!`)
+
+            }
+            if (msg.length > 255 || msg.length == 0) {
+                throw new RangeError(`Message contains ${msg.length} characters!`)
+
+            }
+            if (msg === null) {
+                throw new ReferenceError('Message is null!')
+            }
+            for (let n = 0; n < msg.length; n++) {
+                console.log(msg[n])
+                if (msg[n] == '<') {
+                    for (let i = 0; i < msg.length; i++) {
+                        if (msg[i] == ">") {
+                            return false
+                        }
+                    }
+                }
+            }
+            return true
+        }
+        var d = "werwer <asdasd>"
+        let i = validateMessage(d)
+        console.log(i)
     </script>
 </head>
 
