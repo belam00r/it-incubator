@@ -7,33 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function validateMessage(msg) {
-            if (typeof msg !== "string") {
-                throw new TypeError(`Message should be of type string but was of type ${typeof msg}!`)
-
+        function expandedForm(num) {
+            num = String(num)
+            let arrNum = []
+            for (let i = 0; i < num.length; i++) {
+                let b = String(num[i])
+                for (let c = 0; c < num.length - i - 1; c++) {
+                    b = b.concat("0")
+                }
+                arrNum.push(b)
             }
-            if (msg.length > 255 || msg.length == 0) {
-                throw new RangeError(`Message contains ${msg.length} characters!`)
-
-            }
-            if (msg === null) {
-                throw new ReferenceError('Message is null!')
-            }
-            for (let n = 0; n < msg.length; n++) {
-                console.log(msg[n])
-                if (msg[n] == '<') {
-                    for (let i = 0; i < msg.length; i++) {
-                        if (msg[i] == ">") {
-                            return false
-                        }
-                    }
+            console.log(arrNum)
+            let resultNum = arrNum[0]
+            for (let i = 1; i < arrNum.length; i++) {
+                if (arrNum[i] ! = 0) {
+                    resultNum = resultNum + ` + ${arrNum[i]}`
                 }
             }
-            return true
+            console.log(resultNum)
+            return resultNum
         }
-        var d = "werwer <asdasd>"
-        let i = validateMessage(d)
-        console.log(i)
+
+
+
+        expandedForm(12303)
     </script>
 </head>
 

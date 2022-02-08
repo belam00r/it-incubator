@@ -1,25 +1,19 @@
-function validateMessage(msg) {
-    if (msg === null) {
-        throw new ReferenceError('Message is null!')
+function expandedForm(num) {
+    let numLength = num.length
+    let lastItem
+    let midleItem
+    let startItem
+    if (num[numLength - 1] != 0) {
+        lastItem = num[numLength - 1]
     }
-    if (typeof msg !== "string") {
-        throw new TypeError(`Message should be of type string but was of type ${typeof msg}!`)
-
+    if (num[numLength - 2] != 0) {
+        midleItem = num[numLength - 2] * 10
     }
-    if (msg.length > 255 || msg.length == 0) {
-        throw new RangeError(`Message contains ${msg.length} characters!`)
-
+    if (num[numLength - 3] != 0) {
+        startItem = num[numLength - 3] * 100
     }
-
-    for (let n = 0; n < msg.length; n++) {
-        console.log(msg[n])
-        if (msg[n] == '<') {
-            for (let i = 0; i < msg.length; i++) {
-                if (msg[i] == ">") {
-                    return false
-                }
-            }
-        }
-    }
-    return true
+    let expandedForm = `${startItem} \+ ${midleItem} \+ ${lastItem}`
+    console.log(expandedForm)
+    return expandedForm
 }
+expandedForm(11)
