@@ -196,7 +196,7 @@ const f13 = () => {
                 count += 1
             }
         }
-        out[k] = count
+        out[`"${k}"`] = count
     }
     return out
 }
