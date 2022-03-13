@@ -6,7 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="newjs.js"></script>
+    <script>
+        function persistence(num, count = 0) {
+            let out = 1;
+            num = num.toString();
+            if (num.length == 1) {
+                return count;
+            } else {
+                count += 1
+                for (let item of num) {
+                    out *= item;
+                }
+                return persistence(out, count);
+            }
+        }
+        let a = persistence(39)
+        console.log(a)
+    </script>
 </head>
 
 <body>
