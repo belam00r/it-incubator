@@ -6,28 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function duplicateCount(text) {
-            text = text.toLowerCase(text)
-            let count = 0
-            for (let i = 0; i < text.length; i++) {
-                for (let k = i; k < text.length; k++) {
-                    if (k != i) {
-                        if (text[i] == text[k]) {
-                            console.log(text)
-                            count++
-                            console.log(count)
-                        }
-                    }
-                }
-            }
-            return count
-        }
-        duplicateCount('abbaddccaa')
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="calc">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>+</span>
+        <span class="summ">=</span>
+        <span>-</span>
+    </div>
+    <div class="out">Итог</div>
+    <script src="script.js"></script>
+
 </body>
 
 </html>
